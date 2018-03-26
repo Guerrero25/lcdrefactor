@@ -4,11 +4,11 @@ import java.util.List;
 
 public class PantallaLCD {
     // Puntos fijos
-    private final int[] pf1;
-    private final int[] pf2;
-    private final int[] pf3;
-    private final int[] pf4;
-    private final int[] pf5;
+    private final int[] puntoFijoTopLeft;
+    private final int[] puntoFijoMiddleLeft;
+    private final int[] puntoFijoBottomLeft;
+    private final int[] puntoFijoMiddleRight;
+    private final int[] puntoFijoTopRight;
     private int pivotX;
     private final String[][] matrizImpr;
 
@@ -32,11 +32,11 @@ public class PantallaLCD {
         this.totalColumnas = totalColumnas;
         this.pivotX = 0;
         
-        this.pf1 = new int[2];
-        this.pf2 = new int[2];
-        this.pf3 = new int[2];
-        this.pf4 = new int[2];
-        this.pf5 = new int[2];
+        this.puntoFijoTopLeft = new int[2];
+        this.puntoFijoMiddleLeft = new int[2];
+        this.puntoFijoBottomLeft = new int[2];
+        this.puntoFijoMiddleRight = new int[2];
+        this.puntoFijoTopRight = new int[2];
 
         // Inicializa matriz
         for (int i = 0; i < this.totalFilas; i++) {
@@ -56,20 +56,20 @@ public class PantallaLCD {
      */
     public void adicionarDigito(int numero, int espacio) {
         //Calcula puntos fijos
-        this.pf1[0] = 0;
-        this.pf1[1] = 0 + this.pivotX;
+        this.puntoFijoTopLeft[0] = 0;
+        this.puntoFijoTopLeft[1] = 0 + this.pivotX;
 
-        this.pf2[0] = (this.filasDigitos / 2);
-        this.pf2[1] = 0 + this.pivotX;
+        this.puntoFijoMiddleLeft[0] = (this.filasDigitos / 2);
+        this.puntoFijoMiddleLeft[1] = 0 + this.pivotX;
 
-        this.pf3[0] = (this.filasDigitos - 1);
-        this.pf3[1] = 0 + this.pivotX;
+        this.puntoFijoBottomLeft[0] = (this.filasDigitos - 1);
+        this.puntoFijoBottomLeft[1] = 0 + this.pivotX;
 
-        this.pf4[0] = (this.columnasDigitos - 1);
-        this.pf4[1] = (this.filasDigitos / 2) + this.pivotX;
+        this.puntoFijoMiddleRight[0] = (this.columnasDigitos - 1);
+        this.puntoFijoMiddleRight[1] = (this.filasDigitos / 2) + this.pivotX;
 
-        this.pf5[0] = 0;
-        this.pf5[1] = (this.columnasDigitos - 1) + this.pivotX;
+        this.puntoFijoTopRight[0] = 0;
+        this.puntoFijoTopRight[1] = (this.columnasDigitos - 1) + this.pivotX;
 
         this.pivotX = this.pivotX + this.columnasDigitos + espacio;
 
@@ -167,31 +167,31 @@ public class PantallaLCD {
 
         switch (segmento) {
             case 1:
-                adicionarLinea(this.pf1, POSICION_Y,
+                adicionarLinea(this.puntoFijoTopLeft, POSICION_Y,
                         this.sizeDigitos, CARACTER_VERTICAL);
                 break;
             case 2:
-                adicionarLinea(this.pf2, POSICION_Y,
+                adicionarLinea(this.puntoFijoMiddleLeft, POSICION_Y,
                         this.sizeDigitos, CARACTER_VERTICAL);
                 break;
             case 3:
-                adicionarLinea(this.pf5, POSICION_Y,
+                adicionarLinea(this.puntoFijoTopRight, POSICION_Y,
                         this.sizeDigitos, CARACTER_VERTICAL);
                 break;
             case 4:
-                adicionarLinea(this.pf4, POSICION_Y,
+                adicionarLinea(this.puntoFijoMiddleRight, POSICION_Y,
                         this.sizeDigitos, CARACTER_VERTICAL);
                 break;
             case 5:
-                adicionarLinea(this.pf1, POSICION_X,
+                adicionarLinea(this.puntoFijoTopLeft, POSICION_X,
                         this.sizeDigitos, CARACTER_HORIZONTAL);
                 break;
             case 6:
-                adicionarLinea(this.pf2, POSICION_X,
+                adicionarLinea(this.puntoFijoMiddleLeft, POSICION_X,
                         this.sizeDigitos, CARACTER_HORIZONTAL);
                 break;
             case 7:
-                adicionarLinea(this.pf3, POSICION_X,
+                adicionarLinea(this.puntoFijoBottomLeft, POSICION_X,
                         this.sizeDigitos, CARACTER_HORIZONTAL);
                 break;
             default:
