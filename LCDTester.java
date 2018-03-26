@@ -23,7 +23,7 @@ public class LCDTester {
                 comando = lector.next();
 
                 // Valida si es un numero
-                if (ImpresorLCD.isNumeric(comando)) 
+                if (Utils.isNumeric(comando)) 
                 {
                     espacioDig = Integer.parseInt(comando);
                     
