@@ -82,44 +82,44 @@ public class PantallaLCD {
                 segList.add(4);
                 break;
             case 2:
-                segList.add(5);
-                segList.add(3);
-                segList.add(6);
                 segList.add(2);
+                segList.add(3);
+                segList.add(5);
+                segList.add(6);
                 segList.add(7);
                 break;
             case 3:
-                segList.add(5);
                 segList.add(3);
-                segList.add(6);
                 segList.add(4);
+                segList.add(5);
+                segList.add(6);
                 segList.add(7);
                 break;
             case 4:
                 segList.add(1);
-                segList.add(6);
                 segList.add(3);
                 segList.add(4);
+                segList.add(6);
                 break;
             case 5:
-                segList.add(5);
                 segList.add(1);
-                segList.add(6);
                 segList.add(4);
+                segList.add(5);
+                segList.add(6);
                 segList.add(7);
                 break;
             case 6:
-                segList.add(5);
                 segList.add(1);
-                segList.add(6);
                 segList.add(2);
-                segList.add(7);
                 segList.add(4);
+                segList.add(5);
+                segList.add(6);
+                segList.add(7);
                 break;
             case 7:
-                segList.add(5);
                 segList.add(3);
                 segList.add(4);
+                segList.add(5);
                 break;
             case 8:
                 segList.add(1);
